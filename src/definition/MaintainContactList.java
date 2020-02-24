@@ -9,6 +9,7 @@ public class MaintainContactList {
     Scanner sc= new Scanner(System.in);
 
     public Person addContact() {
+
         Person person =new Person();
         System.out.println("You have chosen to add a new contact:\n"+
                 "Please enter the name of the Person");
@@ -19,11 +20,12 @@ public class MaintainContactList {
         String lastName = sc.nextLine();
         person.setLastName(lastName);
         ArrayList<Long> num=new ArrayList<>();
-        System.out.println("Contact number:");
-
         while(true) {
-            long phoneNo = sc.nextLong();
-            num.add(phoneNo);
+
+            System.out.println("Contact number:");
+        long phoneNo = sc.nextLong();
+        num.add(phoneNo);
+
             System.out.println("Would you like to add another contact number? (y/n):");
             sc.nextLine();
             String ch = sc.nextLine();
@@ -36,6 +38,7 @@ public class MaintainContactList {
                 break;
             }
         }
+        person.setContactList(num);
         System.out.println("Would you like to add email address? (y/n):");
         String choice=sc.nextLine();
         if(choice.equals("y")) {

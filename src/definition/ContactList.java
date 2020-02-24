@@ -1,26 +1,31 @@
 package definition;
-
 import adt.MyContactListAdt;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
 
 public class ContactList implements MyContactListAdt<Person> {
     private Node head;
     private int size;
-    public Node getHead(){
+
+    public Node getHead() {
         return head;
     }
-    public ContactList(){
-        head=null;
+
+    public ContactList() {
+        head = null;
     }
+
     @Override
     public void add(Person data) {
-        Node node =new Node(data);
-        if(head==null){
-            head=node;
-        }
-        else{
-            Node temp=head;
-            while(temp.getNext()!=null){
-                temp=temp.getNext();
+        Node node = new Node(data);
+        if (head == null) {
+            head = node;
+        } else {
+            Node temp = head;
+            while (temp.getNext() != null) {
+                temp = temp.getNext();
             }
             temp.setNext(node);
             size++;
@@ -29,6 +34,7 @@ public class ContactList implements MyContactListAdt<Person> {
 
     @Override
     public void remove(int item) {
+
         Node temp = head;
         Node previous = null;
         String result = "";
@@ -53,30 +59,10 @@ public class ContactList implements MyContactListAdt<Person> {
             } catch (NullPointerException e) {
                 System.out.println("Contact List is Empty");
             }
+        }
+
     }
 
-    @Override
-    public void search(String firstName) {
-
-            Node temp1 = head;
-            int count=0;
-            while (temp != null) {
-                if (temp.getData().getFirstName().equals(firstName)) {
-                    count++;
-                }
-                temp = temp.getNext();
-
-            }
-            if(count!=0){
-                System.out.println(count+" "+"match found!");
-            }
-            else{
-                System.out.println("" +"No result found");
-            }
-    }
-
-    @Override
-    public void view() {
 
     }
 }
