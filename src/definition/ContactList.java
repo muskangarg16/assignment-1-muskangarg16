@@ -94,5 +94,17 @@ public class ContactList implements MyContactListAdt<Person> {
         }
         System.out.println();
     }
+    public void display(){
+        sort();
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Here are all your contacts");
+        Node temp=head;
+        int i=1;
+        while(temp!=null){
+            System.out.println(i +" "+ temp.getData().getFirstName()+" "+temp.getData().getLastName());
+            temp=temp.getNext();
+            i++;
+        }
+    }
 }
 }
