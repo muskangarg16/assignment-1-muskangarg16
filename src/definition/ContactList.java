@@ -63,6 +63,24 @@ public class ContactList implements MyContactListAdt<Person> {
 
     }
 
+    @Override
+    public void search(String firstName) {
+        Node temp = head;
+        int count = 0;
+        while (temp != null) {
+            if (temp.getData().getFirstName().equals(firstName)) {
+                count++;
+            }
+            temp = temp.getNext();
 
+        }
+        if (count != 0) {
+            System.out.println(count + " " + "match found!");
+        } else {
+            System.out.println("" + "No result found");
+        }
     }
+
+
+}
 }
