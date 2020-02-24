@@ -43,11 +43,10 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "FName='" + FName + '\'' +
-                ", LName='" + LName + '\'' +
-                ", contactList=" + contactList +
-                ", email='" + email + '\'' +
-                '}';
-    }
+        if (getContactList().size()==1){
+            return "First Name: "+getFName()+"\n"+"Last Name: "+getLName()+"\n"+"Contact Number: "+getContactList().get(0)+"\n"+"Email address: "+getEmail();
+        }
+        else{
+            return "First Name: "+ getFName()+"\n"+"Last Name: "+getLName()+"\n"+"Contact number(s): "+getContactList()+"\n"+"Email address: "+ getEmail();
+        }
 }

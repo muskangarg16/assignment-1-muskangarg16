@@ -1,5 +1,9 @@
 package adt;
 
-public class MyContactListAdt {
+import definition.Person;
+
+public interface MyContactListAdt {
+
+
 
 }
