@@ -1,37 +1,29 @@
 package definition;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 
 public class Person {
-    private String FName;
-    private String LName;
-    private ArrayList<BigInteger> contactList = new ArrayList<>();
+    private String firstName;
+    private String lastName;
+    private ArrayList<Long> contactList;
     private String email;
 
-    public String getFName() {
-        return FName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFName(String FName) {
-        this.FName = FName;
+    public void setFirstName(String FName) {
+        this.firstName = FName;
     }
 
-    public String getLName() {
-        return LName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLName(String LName) {
-        this.LName = LName;
+    public void setLastName(String LName) {
+        this.lastName = LName;
     }
 
-    public ArrayList<BigInteger> getContactList() {
-        return contactList;
-    }
-
-    public void setContactList(ArrayList<BigInteger> contactList) {
-        this.contactList = contactList;
-    }
 
     public String getEmail() {
         return email;
@@ -43,10 +35,18 @@ public class Person {
 
     @Override
     public String toString() {
-        if (getContactList().size()==1){
-            return "First Name: "+getFName()+"\n"+"Last Name: "+getLName()+"\n"+"Contact Number: "+getContactList().get(0)+"\n"+"Email address: "+getEmail();
+        if (getContactList().size() == 1) {
+            return "First Name: " + getFirstName() + "\n" + "Last Name: " + getLastName() + "\n" + "Contact Number: " + getContactList().get(0) + "\n" + "Email address: " + getEmail();
+        } else {
+            return "First Name: " + getFirstName() + "\n" + "Last Name: " + getLastName() + "\n" + "Contact number(s): " + getContactList() + "\n" + "Email address: " + getEmail();
         }
-        else{
-            return "First Name: "+ getFName()+"\n"+"Last Name: "+getLName()+"\n"+"Contact number(s): "+getContactList()+"\n"+"Email address: "+ getEmail();
-        }
+    }
+
+    public ArrayList<Long> getContactList() {
+        return contactList;
+    }
+
+    public void setContactList(ArrayList<Long> contactList) {
+        this.contactList = contactList;
+    }
 }

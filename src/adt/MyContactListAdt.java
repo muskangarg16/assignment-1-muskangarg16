@@ -2,7 +2,7 @@ package adt;
 
 import definition.Person;
 
-public interface MyContactListAdt {
+public interface MyContactListAdt<Person> {
     public void add(Person data);
 
     public void remove(int item);
