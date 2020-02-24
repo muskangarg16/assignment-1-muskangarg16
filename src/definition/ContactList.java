@@ -81,6 +81,18 @@ public class ContactList implements MyContactListAdt<Person> {
         }
     }
 
-
+    @Override
+    public void view() {
+        sort();
+        System.out.println("---Here are all your contacts---\n" +
+                "-------- * -------- * -------- * --------");
+        Node temp1=head;
+        while(temp1!=null){
+            System.out.println(temp1.getData());
+            temp1=temp1.getNext();
+            System.out.println("-------- * -------- * -------- * --------"+"\n"+"-------- * -------- * -------- * --------");
+        }
+        System.out.println();
+    }
 }
 }
