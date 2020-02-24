@@ -106,5 +106,30 @@ public class ContactList implements MyContactListAdt<Person> {
             i++;
         }
     }
-}
+    public void sort(){
+        Node current = head, index = null;
+        Person temp;
+
+        if(head == null) {
+            return;
+        }
+        else {
+            while(current != null) {
+                //Node index will point to node next to current
+                index = current.getNext();
+
+                while(index != null) {
+                    //If current node's data is greater than index's node data, swap the data between them
+                    if(current.getData().getFirstName().compareTo( index.getData().getFirstName() )> 0) {
+                        temp = current.getData();
+                        current.setData( index.getData());
+                        index.setData( temp );
+                    }
+                    index = index.getNext();
+                }
+                current = current.getNext();
+            }
+        }
+
+    }
 }
